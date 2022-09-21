@@ -13,4 +13,4 @@
 ## EXPERIMENT 6
     select with various claues- between ,in, aggreate functions (https://github.com/Lokeswara18/DBMS-192111532/blob/main/between%20%2C%20in%20%2C%20aggression%20function.txt)
 ## EXPERIMENT 7
-    group by,having , order by(
+    group by,having , order by(https://github.com/Lokeswara18/DBMS-192111532/blob/main/groupby%2Chaving%2Corderby.txt)
