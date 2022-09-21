@@ -5,4 +5,6 @@
    ddl commad primary key (https://github.com/Lokeswara18/DBMS-192111532/blob/main/primarykey.txt)
               foreign key (https://github.com/Lokeswara18/DBMS-192111532/blob/main/foreignkey.txt)
 ## EXPERIMENT 3
-    dml commad insert,select (
+    dml commad insert,select (https://github.com/Lokeswara18/DBMS-192111532/blob/main/dml%20insert%20select.txt)
+## EXPERIMENT 4
+    dml commad delete, update (
