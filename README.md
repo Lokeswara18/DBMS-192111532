@@ -12,3 +12,5 @@
     select with various claues -where pattern matching (https://github.com/Lokeswara18/DBMS-192111532/blob/main/where%20and%20pattern%20matching.txt)
 ## EXPERIMENT 6
     select with various claues- between ,in, aggreate functions (https://github.com/Lokeswara18/DBMS-192111532/blob/main/between%20%2C%20in%20%2C%20aggression%20function.txt)
+## EXPERIMENT 7
+    group by,having , order by(
