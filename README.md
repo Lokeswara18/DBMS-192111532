@@ -2,4 +2,7 @@
 ## EXPERIMENT 1
    ddl commad create, alter ,drop (dbms1,dbms2,dbms3,dbms4)
 ## EXPERIMENT 2
-   ddl commad primary key 
+   ddl commad primary key (https://github.com/Lokeswara18/DBMS-192111532/blob/main/primarykey.txt)
+              foreign key (https://github.com/Lokeswara18/DBMS-192111532/blob/main/foreignkey.txt)
+## EXPERIMENT 3
+    dml commad insert,select (
