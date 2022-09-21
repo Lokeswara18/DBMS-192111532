@@ -7,4 +7,6 @@
 ## EXPERIMENT 3
     dml commad insert,select (https://github.com/Lokeswara18/DBMS-192111532/blob/main/dml%20insert%20select.txt)
 ## EXPERIMENT 4
-    dml commad delete, update (
+    dml commad delete, update (https://github.com/Lokeswara18/DBMS-192111532/blob/main/dml%20update%20delete.txt)
+## EXPERIMENT 5
+    select with various claues -where pattern matching (
