@@ -9,4 +9,6 @@
 ## EXPERIMENT 4
     dml commad delete, update (https://github.com/Lokeswara18/DBMS-192111532/blob/main/dml%20update%20delete.txt)
 ## EXPERIMENT 5
-    select with various claues -where pattern matching (
+    select with various claues -where pattern matching (https://github.com/Lokeswara18/DBMS-192111532/blob/main/where%20and%20pattern%20matching.txt)
+## EXPERIMENT 6
+    select with various claues- between ,in, aggreate functions (
