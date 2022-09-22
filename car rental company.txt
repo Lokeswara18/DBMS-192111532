@@ -1,0 +1,72 @@
+mysql> select*from car_rent;
++-------+---------+---------+--------------+-----------+
+| carid | carname | carrent | carcondition | modelyear |
++-------+---------+---------+--------------+-----------+
+|  1245 | benz    |   15000 | good         |      2022 |
+|  9876 | audi    |   10900 | better       |      2019 |
+|  7654 | bmw     |   20000 | useable      |      2010 |
+|  6275 | lambo   |   50000 | verygood     |      2020 |
++-------+---------+---------+--------------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> create table customer_rent( customerid int , customername char(30), address char(30) , city char(30) );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> insert into customer_rent
+    -> values ( 9776, 'pardhu', 'rkbeach' , 'chennai'),
+    -> (9886,'abhi', ' mgroad' , 'mumbai'),
+    -> (5677,'virat' , ' central','delhi'),
+    -> (9535,'loki','djstreet','banglore');
+Query OK, 4 rows affected (0.04 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select*from customer_rent;
++------------+--------------+----------+----------+
+| customerid | customername | address  | city     |
++------------+--------------+----------+----------+
+|       9776 | pardhu       | rkbeach  | chennai  |
+|       9886 | abhi         |  mgroad  | mumbai   |
+|       5677 | virat        |  central | delhi    |
+|       9535 | loki         | djstreet | banglore |
++------------+--------------+----------+----------+
+4 rows in set (0.00 sec)
+
+mysql> update  car_rent
+    -> set carcondition =' bad' where carname = 'bmw';
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from car_rent;
++-------+---------+---------+--------------+-----------+
+| carid | carname | carrent | carcondition | modelyear |
++-------+---------+---------+--------------+-----------+
+|  1245 | benz    |   15000 | good         |      2022 |
+|  9876 | audi    |   10900 | better       |      2019 |
+|  7654 | bmw     |   20000 |  bad         |      2010 |
+|  6275 | lambo   |   50000 | verygood     |      2020 |
++-------+---------+---------+--------------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> delete from car_rent
+    -> WHERE carid = 7654;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select*from car_rent;
++-------+---------+---------+--------------+-----------+
+| carid | carname | carrent | carcondition | modelyear |
++-------+---------+---------+--------------+-----------+
+|  1245 | benz    |   15000 | good         |      2022 |
+|  9876 | audi    |   10900 | better       |      2019 |
+|  6275 | lambo   |   50000 | verygood     |      2020 |
++-------+---------+---------+--------------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> select sum(carrent) from car_rent;
++--------------+
+| sum(carrent) |
++--------------+
+|        75900 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql>

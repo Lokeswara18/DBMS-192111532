@@ -1,0 +1,95 @@
+ create table employee (fname varchar(30), mnit int, lname varchar(30), ssn int , dob date , address varchar (30), sex varchar (2), salary int, superssn int, deptno int);
+insert into employee values ('virat',5,'kohli',89752,'1857/12/31', 'mgroad','m',987500,90886,9),('sky',98,'yadhv',98665,'1987/04/23','gandhiraod','m',075375,775443,19),('mithali',88,'raj',09751,'1973/09/08','gokulroad','F',90886,99976,22);
+Query OK, 3 rows affected (0.06 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select*from employee;
++---------+------+-------+-------+------------+----------------+------+--------+----------+--------+
+| fname   | mnit | lname | ssn   | dob        | address        | sex  | salary | superssn | deptno |
++---------+------+-------+-------+------------+----------------+------+--------+----------+--------+
+| lokesh  |    2 | reddy | 87657 | 1999-07-29 | beachroad      | m    | 928470 |   908386 |      5 |
+| yuvaraj |    4 | singh | 76223 | 1995-09-18 |  saveethanagar | M    |  87628 |  8554676 |     12 |
+| virat   |    5 | kohli | 89752 | 1857-12-31 | mgroad         | m    | 987500 |    90886 |      9 |
+| sky     |   98 | yadhv | 98665 | 1987-04-23 | gandhiraod     | m    |  75375 |   775443 |     19 |
+| mithali |   88 | raj   |  9751 | 1973-09-08 | gokulroad      | F    |  90886 |    99976 |     22 |
++---------+------+-------+-------+------------+----------------+------+--------+----------+--------+
+5 rows in set (0.00 .sec)
+
+mysql> create  table department (deptname varchar(30),deptnumber int, mgrssn varchar(30), mgrstartdate date );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into department
+    ->  values ('mechanical',22,088752,19970711),('humanities',12,987654,20011112),('civil',5,987624,19890928),('artificial',9,876548,19670923);
+Query OK, 4 rows affected (0.04 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select *from department;
++------------+------------+--------+--------------+
+| deptname   | deptnumber | mgrssn | mgrstartdate |
++------------+------------+--------+--------------+
+| mechanical |         22 | 88752  | 1997-07-11   |
+| humanities |         12 | 987654 | 2001-11-12   |
+| civil      |          5 | 987624 | 1989-09-28   |
+| artificial |          9 | 876548 | 1967-09-23   |
++------------+------------+--------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> select sum(salary)from employee
+    -> ;
++-------------+
+| sum(salary) |
++-------------+
+|     2169859 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select max(salary)from employee;
++-------------+
+| max(salary) |
++-------------+
+|      987500 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select min(salary)from employee;
++-------------+
+| min(salary) |
++-------------+
+|       75375 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary)from employee;
++-------------+
+| avg(salary) |
++-------------+
+| 433971.8000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select fname,lname from employee
+    -> where deptno=5;
++--------+-------+
+| fname  | lname |
++--------+-------+
+| lokesh | reddy |
++--------+-------+
+1 row in set (0.00 sec)
+
+mysql> select e.fname,e.lname,e.salary,1.1*salary as increment_salary
+    -> from employee e,department d
+    -> where e.deptno=d.deptnumber;
++---------+-------+--------+------------------+
+| fname   | lname | salary | increment_salary |
++---------+-------+--------+------------------+
+| lokesh  | reddy | 928470 |        1021317.0 |
+| yuvaraj | singh |  87628 |          96390.8 |
+| virat   | kohli | 987500 |        1086250.0 |
+| mithali | raj   |  90886 |          99974.6 |
+| virat   | kohli | 987500 |        1086250.0 |
+| mithali | raj   |  90886 |          99974.6 |
++---------+-------+--------+------------------+
+6 rows in set (0.00 sec)
+
+mysql>
+
