@@ -1,0 +1,62 @@
+mysql> select
+    -> *from employee;
++---------+------+-------+-------+------------+----------------+------+--------+----------+--------+
+| fname   | mnit | lname | ssn   | dob        | address        | sex  | salary | superssn | deptno |
++---------+------+-------+-------+------------+----------------+------+--------+----------+--------+
+| lokesh  |    2 | reddy | 87657 | 1999-07-29 | beachroad      | m    | 928470 |   908386 |      5 |
+| yuvaraj |    4 | singh | 76223 | 1995-09-18 |  saveethanagar | M    |  87628 |  8554676 |     12 |
+| virat   |    5 | kohli | 89752 | 1857-12-31 | mgroad         | m    | 987500 |    90886 |      9 |
+| sky     |   98 | yadhv | 98665 | 1987-04-23 | gandhiraod     | m    |  75375 |   775443 |     19 |
+| mithali |   88 | raj   |  9751 | 1973-09-08 | gokulroad      | F    |  90886 |    99976 |     22 |
+| virat   |    5 | kohli | 89752 | 1857-12-31 | mgroad         | m    | 987500 |    90886 |      9 |
+| sky     |   98 | yadhv | 98665 | 1987-04-23 | gandhiraod     | m    |  75375 |   775443 |     19 |
+| mithali |   88 | raj   |  9751 | 1973-09-08 | gokulroad      | F    |  90886 |    99976 |     22 |
++---------+------+-------+-------+------------+----------------+------+--------+----------+--------+
+8 rows in set (0.00 sec)
+
+mysql> select*from department;
++------------+------------+--------+--------------+
+| deptname   | deptnumber | mgrssn | mgrstartdate |
++------------+------------+--------+--------------+
+| mechanical |         22 | 88752  | 1997-07-11   |
+| humanities |         12 | 987654 | 2001-11-12   |
+| civil      |          5 | 987624 | 1989-09-28   |
+| artificial |          9 | 876548 | 1967-09-23   |
++------------+------------+--------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> select fname, lname from employee
+    -> where dob BETWEEN 19900911 AND 20000101;
++---------+-------+
+| fname   | lname |
++---------+-------+
+| lokesh  | reddy |
+| yuvaraj | singh |
++---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select e.fname,e.lname,d.deptname from employee e
+    -> inner join department d on e.deptno =d.deptnumber;
++---------+-------+------------+
+| fname   | lname | deptname   |
++---------+-------+------------+
+| lokesh  | reddy | civil      |
+| yuvaraj | singh | humanities |
+| virat   | kohli | artificial |
+| mithali | raj   | mechanical |
+| virat   | kohli | artificial |
+| mithali | raj   | mechanical |
++---------+-------+------------+
+6 rows in set (0.00 sec)
+
+mysql> select fname , lname from employee
+    -> where deptno =22;
++---------+-------+
+| fname   | lname |
++---------+-------+
+| mithali | raj   |
+| mithali | raj   |
++---------+-------+
+2 rows in set (0.00 sec)
+
+mysql>
