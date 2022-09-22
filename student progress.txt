@@ -1,0 +1,112 @@
+mysql> create table student_progress (studentname varchar (30), studentid int, mat int, phy int, che int, grade varchar(5));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into student_progress
+    -> values ('VIRAT',18,99,100,88,'A'),('YUVI',12,98,89,98,'B'),('DHONI',07,98,87,65,'A'),('LOKESH',01,87,98,87,'A'),('BHUVI',19,37,83,57,'C');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM STUDENT_PROGRESS;
++-------------+-----------+------+------+------+-------+
+| studentname | studentid | mat  | phy  | che  | grade |
++-------------+-----------+------+------+------+-------+
+| VIRAT       |        18 |   99 |  100 |   88 | A     |
+| YUVI        |        12 |   98 |   89 |   98 | B     |
+| DHONI       |         7 |   98 |   87 |   65 | A     |
+| LOKESH      |         1 |   87 |   98 |   87 | A     |
+| BHUVI       |        19 |   37 |   83 |   57 | C     |
++-------------+-----------+------+------+------+-------+
+5 rows in set (0.00 sec)
+
+mysql> update student_progress
+    -> set studentname= 'SACHIN' where studentname ='BHUVI';
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from student_progress;
++-------------+-----------+------+------+------+-------+
+| studentname | studentid | mat  | phy  | che  | grade |
++-------------+-----------+------+------+------+-------+
+| VIRAT       |        18 |   99 |  100 |   88 | A     |
+| YUVI        |        12 |   98 |   89 |   98 | B     |
+| DHONI       |         7 |   98 |   87 |   65 | A     |
+| LOKESH      |         1 |   87 |   98 |   87 | A     |
+| SACHIN      |        19 |   37 |   83 |   57 | C     |
++-------------+-----------+------+------+------+-------+
+5 rows in set (0.00 sec)
+
+mysql> delete from  student_progress
+    -> where studentname = 'lokesh';
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select*from student_progress;
++-------------+-----------+------+------+------+-------+
+| studentname | studentid | mat  | phy  | che  | grade |
++-------------+-----------+------+------+------+-------+
+| VIRAT       |        18 |   99 |  100 |   88 | A     |
+| YUVI        |        12 |   98 |   89 |   98 | B     |
+| DHONI       |         7 |   98 |   87 |   65 | A     |
+| SACHIN      |        19 |   37 |   83 |   57 | C     |
++-------------+-----------+------+------+------+-------+
+4 rows in set (0.00 sec)
+mysql> alter table student_progress add column(totalmarks int );
+Query OK, 4 rows affected (0.06 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select*from student_progress;
++-------------+-----------+------+------+------+-------+------------+
+| studentname | studentid | mat  | phy  | che  | grade | totalmarks |
++-------------+-----------+------+------+------+-------+------------+
+| VIRAT       |        18 |   99 |  100 |   88 | A     |       NULL |
+| YUVI        |        12 |   98 |   89 |   98 | B     |       NULL |
+| DHONI       |         7 |   98 |   87 |   65 | A     |       NULL |
+| SACHIN      |        19 |   37 |   83 |   57 | C     |       NULL |
++-------------+-----------+------+------+------+-------+------------+
+4 rows in set (0.00 sec)
+
+mysql> update student_progress
+    -> set totalmarks = 287
+    -> where studentid = 18;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from student_progress;
++-------------+-----------+------+------+------+-------+------------+
+| studentname | studentid | mat  | phy  | che  | grade | totalmarks |
++-------------+-----------+------+------+------+-------+------------+
+| VIRAT       |        18 |   99 |  100 |   88 | A     |        287 |
+| YUVI        |        12 |   98 |   89 |   98 | B     |       NULL |
+| DHONI       |         7 |   98 |   87 |   65 | A     |       NULL |
+| SACHIN      |        19 |   37 |   83 |   57 | C     |       NULL |
++-------------+-----------+------+------+------+-------+------------+
+4 rows in set (0.00 sec)
+
+mysql> update student_progress
+    -> set totalmarks = 246
+    -> where studentid = 12
+    -> ;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update student_progress
+    -> set totalmarks = 199
+    -> where studentid = 7;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update student_progress
+    -> set totalmarks = 156
+    -> where studentid = 19;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select*from student_progress;
++-------------+-----------+------+------+------+-------+------------+
+| studentname | studentid | mat  | phy  | che  | grade | totalmarks |
++-------------+-----------+------+------+------+-------+------------+
+| VIRAT       |        18 |   99 |  100 |   88 | A     |        287 |
+| YUVI        |        12 |   98 |   89 |   98 | B     |        246 |
+| DHONI       |         7 |   98 |   87 |   65 | A     |        199 |
+| SACHIN      |        19 |   37 |   83 |   57 | C     |        156 |
++-------------+-----------+------+------+------+-------+------------+
+4 rows in set (0.04 sec)
