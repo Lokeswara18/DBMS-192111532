@@ -1,0 +1,22 @@
+mysql> delimiter //
+mysql> create function calcincome(starting_value int)
+    -> returns int
+    ->
+    -> begin
+    ->
+    -> declare income int;
+    ->
+    -> set income = 0;
+    ->
+    -> label 1: while income <= 3000 do
+    -> set income = income + starting_value;
+    -> end while label 1;
+    ->
+    ->
+    -> return income;
+    ->
+    ->
+    -> end;//
+
+mysql> label 1:while income <= 3000 do;
+    ->
