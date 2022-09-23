@@ -6,7 +6,7 @@
               foreign key (https://github.com/Lokeswara18/DBMS-192111532/blob/main/foreignkey.txt)
 ## EXPERIMENT 3
     dml commad insertselect 
-    (https://github.com/Lokeswara18/DBMS-192111532/blob/main/dml%20insert%20select.txt)
+    -(https://github.com/Lokeswara18/DBMS-192111532/blob/main/dml%20insert%20select.txt)
 ## EXPERIMENT 4
     dml commad delete, update
     (https://github.com/Lokeswara18/DBMS-192111532/blob/main/dml%20update%20delete.txt)
